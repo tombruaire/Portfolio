@@ -13,14 +13,28 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style-5.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style-6.css">
     <link rel="stylesheet" href="zoombox/zoombox.css">
+    <style type="text/css">
+    	body {
+    		background-image: url(assets/img/fond.jpg); 
+    		background-position: center center; 
+    		background-repeat: no-repeat; 
+    		background-attachment: fixed; 
+    		background-size: cover;
+    	}
+    	@media only screen and (max-width: 767px) {
+	    	body {background-image: url(assets/img/fond-mobile.png);}
+		}
+    </style>
 </head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" style="background-image: url(assets/img/fond.jpg); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	<div class="container">
 		<a class="navbar-brand" href="https://tombruaire.fr">tombruaire.fr</a>
 		<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="oi oi-menu"></span>
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list text-light" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
 		</button>
 		<div class="collapse navbar-collapse" id="ftco-nav">
 			<ul class="navbar-nav nav ml-auto">

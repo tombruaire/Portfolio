@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 
         mail("contact@tombruaire.fr", "Nouveau message !", $message, $header);
 
-        Alerts::setFlash("Votre message a bien été envoyé !");
+        header('Location: https://tombruaire.fr');
 
 	}
 }

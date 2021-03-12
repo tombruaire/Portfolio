@@ -192,15 +192,24 @@
   								<div class="card-body" style="background-color: #20B2AA;">
   									<p class="fw-bold" style="color: #191970; font-size: 14pt;">Projets réalisés :</p>
 	                                <ul>
+                                        <li>
+                                            <a href="assets/files/TomBRUAIRE-Stage.pdf" target="_blank">
+                                                <span class="icon-file-pdf-o mr-1"></span>
+                                                Découverte de <b>Symfony</b>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="assets/files/TomBRUAIRE-Stage.pdf" target="_blank">
+                                                <span class="icon-file-pdf-o mr-1"></span>
+                                                Découverte de <b>Docker</b>
+                                            </a>
+                                        </li>
 	                                	<li>
-	                                		Découverte de <b><a href="https://symfony.com/" target="_blank">Symfony</a></b>
-	                                	</li>
-	                                	<li>
-	                                		Découverte de <b><a href="https://www.ubuntu-fr.org/" target="_blank">Ubuntu</a></b>
-	                                	</li>
-	                                	<li>
-	                                		Découverte de <b><a href="https://www.docker.com/" target="_blank">Docker</a></b>
-	                                	</li>
+                                            <a href="assets/files/TomBRUAIRE-Stage.pdf" target="_blank">
+                                                <span class="icon-file-pdf-o mr-1"></span>
+                                                Découverte de <b>Docker</b>
+                                            </a>
+                                        </li>
 	                                	<li>
 	                                		Création d'une barre de recherche sous forme de menu déroulant reliée à une base de données MySQL.
 	                                	</li>
@@ -436,7 +445,9 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <!-- Veille Juridique
-                <object data="assets/files/VeilleJuridique.pdf" type="application/pdf" width="200%" height="680px"></object>
+                <a class="btn btn-primary" href="./assets/files/VeilleJuridique.pdf" target="_blank">
+                    Présentation du logiciel GIT
+                </a>
                 -->
             </div>
         </div>
@@ -452,7 +463,9 @@
         </div>
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <object data="assets/files/VeilleTechnologique.pdf" type="application/pdf" width="200%" height="680px"></object>
+                <a class="btn btn-primary" href="./assets/files/VeilleTechnologique.pdf" target="_blank">
+                    Présentation du logiciel GIT
+                </a>
             </div>
         </div>
     </div>
@@ -469,7 +482,7 @@
 			<div class="col-md-6 order-md-last d-flex">
 				<form method="post" action="" class="p-4 p-md-5 contact-form">
 					<div class="form-group">
-						<input type="email" name="email" placeholder="Adresse email" class="form-control" required="required">
+						<input type="email" name="email" placeholder="Votre adresse email" class="form-control" required="required">
 					</div>
 					<div class="form-group">
 						<input type="text" name="sujet" placeholder="Sujet du message" class="form-control" required="required">
