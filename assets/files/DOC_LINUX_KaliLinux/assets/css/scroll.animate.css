@@ -1,0 +1,265 @@
+.reveal-loaded .reveal [class*="reveal-"] {
+    opacity: 0!important;
+    transform: translateY(30px)!important;
+    transition: 0s!important;
+}
+
+.reveal-loaded [class*="reveal-"] {
+	transition: 1s cubic-bezier(.5, 0, 0, 1);
+}
+
+/* On ajoute du délai */
+.reveal-loaded .reveal-2 {
+    transition-delay: .1s;
+}
+
+.reveal-loaded .reveal-3 {
+    transition-delay: .2s;
+}
+
+.reveal-loaded .reveal-4 {
+    transition-delay: .3s;
+}
+
+.reveal-loaded .reveal-5 {
+    transition-delay: .4s;
+}
+
+.reveal-loaded .reveal-6 {
+    transition-delay: .5s;
+}
+
+.reveal-loaded .reveal-7 {
+    transition-delay: .6s;
+}
+
+.reveal-loaded .reveal-8 {
+    transition-delay: .7s;
+}
+
+.reveal-loaded .reveal-9 {
+    transition-delay: .8s;
+}
+
+.reveal-loaded .reveal-10 {
+    transition-delay: .9s;
+}
+
+.reveal-loaded .reveal-11 {
+    transition-delay: .10s;
+}
+
+.reveal-loaded .reveal-12 {
+    transition-delay: .11s;
+}
+
+.reveal-loaded .reveal-13 {
+    transition-delay: .12s;
+}
+
+.reveal-loaded .reveal-14 {
+    transition-delay: .13s;
+}
+
+.reveal-loaded .reveal-15 {
+    transition-delay: .14s;
+}
+
+.reveal-loaded .reveal-16 {
+    transition-delay: .15s;
+}
+
+.reveal-loaded .reveal-17 {
+    transition-delay: .16s;
+}
+
+.reveal-loaded .reveal-18 {
+    transition-delay: .17s;
+}
+
+.reveal-loaded .reveal-19 {
+    transition-delay: .18s;
+}
+
+.reveal-loaded .reveal-20 {
+    transition-delay: .19s;
+}
+
+.reveal-loaded .reveal-21 {
+    transition-delay: .20s;
+}
+
+.reveal-loaded .reveal-22 {
+    transition-delay: .21s;
+}
+
+.reveal-loaded .reveal-23 {
+    transition-delay: .22s;
+}
+
+.reveal-loaded .reveal-24 {
+    transition-delay: .23s;
+}
+
+.reveal-loaded .reveal-25 {
+    transition-delay: .24s;
+}
+
+.reveal-loaded .reveal-26 {
+    transition-delay: .25s;
+}
+
+.reveal-loaded .reveal-27 {
+    transition-delay: .26s;
+}
+
+.reveal-loaded .reveal-28 {
+    transition-delay: .27s;
+}
+
+.reveal-loaded .reveal-29 {
+    transition-delay: .28s;
+}
+
+.reveal-loaded .reveal-30 {
+    transition-delay: .29s;
+}
+
+.reveal-loaded .reveal-31 {
+    transition-delay: .30s;
+}
+
+.reveal-loaded .reveal-32 {
+    transition-delay: .31s;
+}
+
+.reveal-loaded .reveal-32 {
+    transition-delay: .31s;
+}
+
+.reveal-loaded .reveal-33 {
+    transition-delay: .32s;
+}
+
+.reveal-loaded .reveal-34 {
+    transition-delay: .33s;
+}
+
+.reveal-loaded .reveal-35 {
+    transition-delay: .34s;
+}
+
+.reveal-loaded .reveal-36 {
+    transition-delay: .35s;
+}
+
+.reveal-loaded .reveal-37 {
+    transition-delay: .36s;
+}
+
+.reveal-loaded .reveal-38 {
+    transition-delay: .37s;
+}
+
+.reveal-loaded .reveal-39 {
+    transition-delay: .38s;
+}
+
+.reveal-loaded .reveal-40 {
+    transition-delay: .39s;
+}
+
+.reveal-loaded .reveal-41 {
+    transition-delay: .40s;
+}
+
+.reveal-loaded .reveal-42 {
+    transition-delay: .41s;
+}
+
+.reveal-loaded .reveal-43 {
+    transition-delay: .42s;
+}
+
+.reveal-loaded .reveal-44 {
+    transition-delay: .43s;
+}
+
+.reveal-loaded .reveal-45 {
+    transition-delay: .44s;
+}
+
+.reveal-loaded .reveal-46 {
+    transition-delay: .45s;
+}
+
+.reveal-loaded .reveal-47 {
+    transition-delay: .46s;
+}
+
+.reveal-loaded .reveal-48 {
+    transition-delay: .47s;
+}
+
+.reveal-loaded .reveal-49 {
+    transition-delay: .48s;
+}
+
+.reveal-loaded .reveal-50 {
+    transition-delay: .49s;
+}
+
+.reveal-loaded .reveal-51 {
+    transition-delay: .50s;
+}
+
+.reveal-loaded .reveal-52 {
+    transition-delay: .51s;
+}
+
+.reveal-loaded .reveal-53 {
+    transition-delay: .52s;
+}
+
+.reveal-loaded .reveal-54 {
+    transition-delay: .53s;
+}
+
+.reveal-loaded .reveal-54 {
+    transition-delay: .53s;
+}
+
+.reveal-loaded .reveal-55 {
+    transition-delay: .54s;
+}
+
+.reveal-loaded .reveal-56 {
+    transition-delay: .55s;
+}
+
+.reveal-loaded .reveal-57 {
+    transition-delay: .56s;
+}
+
+.reveal-loaded .reveal-58 {
+    transition-delay: .57s;
+}
+
+.reveal-loaded .reveal-59 {
+    transition-delay: .58s;
+}
+
+.reveal-loaded .reveal-60 {
+    transition-delay: .59s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal [class*="reveal-"] {
+	    opacity: 1!important
+	    transform: translateY(0px)!important;
+	}
+	[class*="reveal-"] {
+		transition-duration: 0s!important;
+		transition-delay: 0s!important;
+	}
+}

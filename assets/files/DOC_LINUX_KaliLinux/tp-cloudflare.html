@@ -1,0 +1,453 @@
+<meta charset="utf-8">
+<script src="assets/js/helpers.js"></script>
+<script>let pathImg = "TP_CLOUDFLARE/";
+getHeader("TP Cloudflare", "Cloudflare permet de générer des URLs dynamiques qui redirige vers des sites ou des solutions hébergées en local.");
+</script>
+
+<!-- SAVE
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-warning text-dark border-light p-10 mx-md-5 h-md-100 reveal-2">
+		<div class="fs-4">
+			<h3 class="mb-5"><strong>Mettre la machine virtuelle en <code>Bridget</code></strong></h3>
+			<p class="text-dark text-start">Clique droit sur le nom de la machine  -> <code>Settings</code> -> <code>Network Adpater</code> -> <code>Bridget: Connected directly to the physical network</code> -> cochez <code>Replicate physical network connection state</code></p>
+		</div>
+	</div>
+</div>
+-->
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-2">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Téléchargement de Cloudflare
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">1. Passez en mode Administrateur :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#6B8E23">( </font><font color="#00BFFF"><b>user@kali</b></font><font color="#6B8E23"> )-[</font> <font color="white"><b>~</b></font> <font color="#6B8E23">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">sudo su</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">3. Nettoyez la console :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">clear</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">4. Téléchargez Cloudflare pour Linux à l'aide de la commande <code>wget</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">wget https://github.com/cloudflare/cloudflared/releases/download/2023.1.0/cloudflared-linux-amd64</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">Si vous voulez une autre version : <a href="https://github.com/cloudflare/cloudflared/releases" target="_blank" style="color: aqua;">https://github.com/cloudflare/cloudflared/releases</a><br><i>(Sélectionnez la version -> clique droit -> copier l'adresse du lien)</i></p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">5. Nettoyez la console :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">clear</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">6. Vérifiez que le fichier <code>cloudflared-linux-amd64</code> a bien été téléchargé :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ls -la</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">7. Attribuez les droits d'exécution à ce fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod +x cloudflared-linux-amd64</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">8. Vérifiez que l'attribution a été bien été faite :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ls -la</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">9. Nettoyez la console :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">clear</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-3">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Lancer Cloudflare
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">Demander à Cloudflare de générer une URL qui redirige vers <code>localhost:80</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">./cloudflared-linux-amd64 tunnel --url localhost:80</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1"><code>./</code> : pour exécuter un script</p>
+					<p class="text-dark text-start mt-1"><code>tunnel</code> : pour créer un tunnel externe</p>
+					<p class="text-dark text-start mt-1"><code>--url</code> : pour générer une URL</p>
+					<p class="text-dark text-start mt-1"><code>localhost:80</code> : port du serveur local écouté 80</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Sortir de l'exécution avec la commande <code>ctrl c</code></p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Autorisez les groupes d'utilisateurs <code>root</code> et <code>daymon</code> à faire un <code>ping</code> depuis le monde extérieur :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">sysctl net.ipv4.ping_group_range='0 1'</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-4">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Lancer Apache
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">Installation d'Apache :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">apt install -y apache2</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Démarrer le serveur web d'Apache :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">service apache2 start</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">Si vous allez sur un navigateur internet et que vous saisissez dans la barre d'url l'adresse IP de la machine virtuelle<code>KaliLinux</code> obtenu à l'aide de la commande <code>ip a</code> -> <code>eth0</code> -> <code>inet</code> <i>(sans le <code>/24</code>)</i>, vous devriez arriver sur la page d'accueil d'Apache2.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-5">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Rendre la page d'accueil d'Apache accessible depuis le monde extérieur
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">1. Ouvrez le fichier <code>index.html</code> de la page d'accueil d'Apache :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">nano /var/www/html/index.html</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">2. Dans le fichier, au niveau de <code>Apache2 Debian Default Page</code>, rajoutez <code>IRIS</code> avant <code>Debian</code></p>
+					<p class="text-dark text-start">Enregistrez la modification avec<code class="text-dark">ctrl x</code>-><code class="text-dark">O <i class="text-gray-700">(la lettre)</i></code>-><code class="text-dark">Entrée</code></p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">3. Actualisez la page web d'Apache sur un navigateur internet.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">4. Redemandez à Cloudflare de générer une URL <i>(un tunnel externe)</i> qui redirige vers <code>localhost:80</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">./cloudflared-linux-amd64 tunnel --url localhost:80</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">Une URL va être générer dans l'exécution de la commande et sera encadré.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">5. Sélectionnez l'URL généré puis faite un clique droit et cliquez sur <code>Copier l'adresse du lien</code>.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">6. Collez l'URL copié dans la barre d'url d'un navigateur internet.</code></p>
+					<p class="text-dark text-start">Vous devriez arriver sur la page d'accueil d'Apache <i>(grâce ducoup à une URL générée)</i>.</code></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-warning text-dark border-light p-10 mx-md-5 h-md-100 reveal-6">
+		<div class="fs-4">
+			<strong>Ouvrez un nouveau Terminal et identifiez-vous de nouveau en tant qu'administrateur -> <code>sudo su</code> -> <code>root</code></strong>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-7">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						L'outils <code>setoolkit</code>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start"><code>setoolkit</code> est un utilitaire qui permet de faire pas mal de choses, comme du Social Engineering à travers la mise en place du fichier.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Lancement de l'outils :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">setoolkit</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1"><code>Do you agree to the terms of service [y/n]:</code>-><code>y</code></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-8">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Social Engineering
+					</h3>
+				</div>
+				<div class="alert alert-warning text-dark mt-5" role="alert">
+					<div class="fs-4">
+						<strong>Avoir lancer l'outils <code>setoolkit</code></strong>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">Le Social-Engineering sont des attaques qui visent le comportement de l'être humain.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">1. Sélectionnez <code>Social-Engineering Attacks</code> en saisissant <code>1</code> dans le Terminal pour faire des attaques Solial-Engineering :</p>
+					<div class="fs-3">
+						<div class="highlight">
+							<div class="text-start"><span class="text-gray-800">Select from the menu:</span></div><br>
+							<div class="text-start ms-5"><span class="text-gray-800">1) Social-Engineering Attacks</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">2) Penetration Testing (Fast-Track)</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">3) Third Party Modules</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">4) Update the Social-Engineer Toolkit</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">5) Update SET configuration</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">6) Help, Credits, and About</span></div><br>
+							<div class="text-start ms-5"><span class="text-gray-800">99) Exit the Social-Engineer Toolkit</span></div>
+						</div>
+					</div>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF"><u>set</u></font><font color="white">&gt;</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">1</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">2. Sélectionnez <code>Website Attack Vectors</code> en saisissant <code>2</code> dans le Terminal pour attaquer un site internet :</p>
+					<div class="fs-3">
+						<div class="highlight">
+							<div class="text-start"><span class="text-gray-800">Select from the menu:</span></div><br>
+							<div class="text-start ms-5"><span class="text-gray-800">1) Spear-Phishing Attack Vectors</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">2) Website Attack Vectors</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">3) Infectious Media Generator</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">4) Create a Payload and Listener</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">5) Mass Mailer Attack</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">6) Arduino-Based Attack Vector</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">7) Wireless Access Point Attack Vector</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">8) QRCode Generator Attack Vector</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">9) Powershell Attack Vectors</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">10) Third Party Modules</span></div><br>
+							<div class="text-start ms-5"><span class="text-gray-800">99) Return back to the main menu.</span></div>
+						</div>
+					</div>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF"><u>set</u></font><font color="white">&gt;</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">2</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">3. Sélectionnez <code>Credential Harvester Attack Method</code> en saisissant <code>3</code> dans le Terminal pour récupérer les logins et mots de passes des utilisateurs :</p>
+					<div class="fs-3">
+						<div class="highlight">
+							<div class="text-start ms-5"><span class="text-gray-800">1) Java Applet Attack Method</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">2) Metasploit Browser Exploit Method</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">3) Credential Harvester Attack Method</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">4) Tabnabbing Attack Method</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">5) Web Jacking Attack Method</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">6) Multi-Attack Web Method</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">7) HTA Attack Method</span></div><br>
+							<div class="text-start ms-5"><span class="text-gray-800">99) Return to Main menu.</span></div>
+						</div>
+					</div>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF"><u>set</u></font><font color="white">:</font><font color="#00BFFF"><u>webattack</u></font><font color="white">&gt;</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">3</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">4. Sélectionnez <code>Site Cloner</code> en saisissant <code>2</code> dans le Terminal pour cloner un site internet :</p>
+					<div class="fs-3">
+						<div class="highlight">
+							<div class="text-start ms-5"><span class="text-gray-800">1) Web Templates</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">2) Site Cloner</span></div>
+							<div class="text-start ms-5"><span class="text-gray-800">3) Custom Import</span></div><br>
+							<div class="text-start ms-5"><span class="text-gray-800">99) Return to Webattack menu.</span></div>
+						</div>
+					</div>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF"><u>set</u></font><font color="white">:</font><font color="#00BFFF"><u>webattack</u></font><font color="white">&gt;</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">2</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF"><u>set</u></font><font color="white">:</font><font color="#00BFFF"><u>webattack</u></font><font color="white">&gt; IP address for the POST back in Harvester/Tabnabbing [192.168.XXX.XXX]:</font></span></div>
+					</div>
+					<p class="text-dark text-start mt-1"><code>IP address for the POST back in Harvester/Tabnabbing [192.168.XXX.XXX]:</code> -> <i>Est-ce que tu veux cloner ton site derrière cette adresse IP, ou un autre serveur web ?</i></p>
+					<p class="text-dark text-start mt-1">Par défaut, il propose l'adresse IP de la machine virtuelle <code>KaliLinux</code> <i>(celle où vous êtes en train de réaliser le TP)</i>.</p>
+					<p class="text-dark text-start fw-bold mt-1">Validez avec la touche <code>Entrée</code> du clavier.</p>
+				</div>
+				<div class="mb-10">
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF"><u>set</u></font><font color="white">:</font><font color="#00BFFF"><u>webattack</u></font><font color="white">&gt; Enter the url to clone:</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">https://fr-fr.facebook.com</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1"><code>Enter the url to clone:</code> -> <i>Saisir l'URL du site à cloner</i></p>
+					<p class="text-dark text-start fw-bold mt-1">Prenons exemple pour le site de Facebook.</p>
+					<p class="text-dark text-start fw-bold mt-1">Validez avec la touche <code>Entrée</code> du clavier.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Une fois validé avec la touche <code>Entrée</code> du clavier, l'outils <code>setoolkit</code> à déjà cloner la page d'identification <code>login.php</code> du site de Facebook :</p>
+					<div class="fs-3">
+						<div class="highlight">
+							<div class="text-start ms-5"><span class="text-warning">[*] Cloning the website: https://login.facebook.com/login.php</span></div>
+							<div class="text-start ms-5"><span class="text-warning">[*] This could take a little bit...</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Désactivez la page d'Apache2 par défaut, pour pouvoir afficher la page de connexion de Facebook</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">Do you want to attemp to disable Apache? [y/n]:</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">y</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">Si vous actualisez/saisissez l'adresse IP dans la barre d'URL dans un navigateur internet, vous devriez arriver sur la page d'identification de Facebook.</p>
+					<p class="text-dark text-start mt-1">Saississez de faux identifiants.</p>
+					<p class="text-dark text-start mt-1">Si vous revenez ensuite dans la console, vous pourrait retrouver et voir le login et mot de passe saisi, et ce pour tous les utilisateurs qui sont sur la même adresse IP que vous <i>(vous pourrez voir leurs login)</i>.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+nextButton(170, 9, "tp-nmap.html", "TP nmap");
+getFooter();
+</script>

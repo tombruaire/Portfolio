@@ -1,0 +1,354 @@
+<meta charset="utf-8">
+<script src="assets/js/helpers.js"></script>
+<script>let pathImg = "TP_NMAP/";
+getHeader("TP nmap", "nmap est un scanner de vulnérabilité très puissant ayant déjà fait ses preuves.");
+</script>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-2">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Téléchargement d'une machine virtuelle vulnérable <code>Metasploitable</code>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">Cette machine virtuelle a été créer par l'association <a href="https://owasp.org/" target="_blank" style="color: aqua;">OWASP</a> <i><b>O</b>pen <b>W</b>eb <b>A</b>pplication <b>S</b>ecurity <b>P</b>roject</i>.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">1. Rendez-vous sur <a href="https://sourceforge.net/projects/metasploitable/files/Metasploitable2/" target="_blank" style="color: aqua;">https://sourceforge.net/projects/metasploitable/files/Metasploitable2/</a>.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">2. Cliquez sur <code>metasploitable-linux-2.0.0.zip</code> pour télécharger la machine virtuelle.</p>
+					<p class="text-dark text-start">Vous devrez patienter 5 secondes avant que le téléchargement se lance.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">3. Une fois l'archive <code>metasploitable-linux-2.0.0.zip</code> téléchargée, décompressez-là à l'aide de <a href="https://www.win-rar.com/start.html?&L=10" target="_blank" style="color: aqua;">WinRar</a><br> ou <a href="https://www.winzip.com/fr/" target="_blank" style="color: aqua;">WinZip <i>(déjà intégré dans l'ordinateur normalement)</i></a>.</p>
+					<p class="text-dark text-start">Un dossier nommé <code>Metasploitable2-Linux</code> se trouve dedant.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-3">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Mise en place de la machine virtuelle <code>Metasploitable</code> sur VMware
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">1. Depuis VMware, à gauche, faites un clique droit, puis cliquez sur <code>New Folder</code>. Nommez-le <code>Metasploitable</code></p>
+					<p class="text-dark text-start">Je vous conseil de faire ça pour vos autres machines virtuelles déjà crées, ce sera peut-être plus facile pour vous de vous y retrouver.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">2. Une fois fait, en haut à gauche, cliquez sur <code>File</code> -> <code>Open...</code> et aller dans le dossier <code>Metasploitable2-Linux</code> extrait de l'archive, pour sélectionner le fichier <code>Metasploitable.vmx</code>.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">3. Une fois fait, cliquez sur <code>Ouvrir</code>.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">4. Glissez la machine <code>Metasploitable2-Linux</code> dans le dossié <code>Metasploitable</code> créer précédemment.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start"><u>Pas besoin</u> d'<code>Upgrade</code> la machine virtuelle <i>(si il vous le demande en-dessous de <code>Edit virtual machine settings</code>)</i>.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-4">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Machine virtuelle <code>Metasploitable2-Linux</code>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">1. Cliquez sur <code>Power on this virtual machine</code>.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">2. Une popup va alors apparaître, cliquez sur <code>I Copied It</code>.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">3. Identifiez-vous avec le compte admin par défaut.</p>
+					<p class="text-dark text-start">Les identifians de l'admin par défaut sont <code>msfadmin/msfadmin</code></p>
+					<p class="text-warning text-start"><b>Attention!</b> Le clavier est en QWERTY par défaut : </p>
+					<p class="text-dark text-start"><code>metasploitable login:</code> msfadmin <i>(sur le clavier -> ,sfqd,in)</i></p>
+					<p class="text-dark text-start"><code>Password:</code> msfadmin <i>(sur le clavier -> ,sfqd,in)</i></p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">4. Identifez-vous en tant qu'administrateur</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700">msfadmin@metasploitable:~$</span></div>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">sudo su</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1"><code>[sudo] password for msfadmin:</code> msfadmin <i>(sur le clavier -> ,sfqd,in)</i></p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">5. Mettez le clavier en français :</p>
+					<p class="text-dark text-start">Malheursement, il ne le sera pas si vous redémarrer la machine virtuelle.</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700">root@metasploitable:/home/msfadmin#</span></div>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">loadkeys fr</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1"><i>(sur le clavier -> loqdkeys fr)</i></p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">6. Vérifiez votre configuration IP à l'aide de la commande <code>ipconfig</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700">root@metasploitable:/home/msfadmin#</span></div>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ipconfig</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">7. Saisissez l'adresse IP <code>inet</code> de l'interface <code>eth0</code> dans un navigateur internet.</p>
+					<p class="text-dark text-start">Vous devriez arriver sur la page d'accueil de la machine virtuelle.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">La page d'accueil se présente sous forme de menu avec 5 liens :</p>
+					<ol class="text-dark text-start fs-4">
+						<li class="mb-5">TWiki</li>
+						<li class="mb-5">phpMyAdmin</li>
+						<li class="mb-5">Multilidae</li>
+						<li class="mb-5">DVWA</li>
+						<li class="mb-5">WebDAV</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-5">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Vérifier que la machine <code>KaliLinux</code> communique bien avec la machine <code>Metasploitable2-Linux</code> à l'aide de la commande <code>ping</code>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">1. Saisissez l'adresse IP <code>eth0</code> <code>inet</code> de la machine <code>Metasploitable2-Linux</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ping 192.168.X.X</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">2. Nettoyez la console :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">clear</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-6">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Utilisation du scanner de vulnérabilité <code>nmap</code> sur la machine virtuelle <code>KaliLinux</code>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">Afficher la liste des options de <code>nmap</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">nmap</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Scanner une adresse IP réseau et trouver les adresse IP présentes dans ce réseau :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">nmap -sn 192.168.X.0/24</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">Scan et vérifie toutes les machines présentes dans le réseau <i>(qui ont les 3 premiers octets de l'adresse IP -> 192.168.X)</i></p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Scanner une adresse IP :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/usr/share/nmap/scripts</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">nmap [eth0 inet IP]</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">La machine va alors parler directement à l'autre machine et ainsi récupérer les ports ouverts et les protocoles se trouvant derrière ces ports.</p>
+					<p class="text-dark text-start">Aaaa</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Scanner une URL :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/usr/share/nmap/scripts</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">nmap [url]</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">La machine va alors parler directement à l'autre machine et ainsi récupérer les ports ouverts et les protocoles se trouvant derrière ces ports.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Voir tous les scripts de <code>nmap</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">cd /usr/share/nmap/scripts/</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">Scripts qui permettent de scanner une cible en fonction d'un protocol, d'une technologie, d'un port, du CMS utilisé, etc...</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/usr/share/nmap/scripts</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ls -la</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Rechercher uniquement un script contant un mot en particulier dans son nom :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/usr/share/nmap/scripts</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ls -la | grep ssh</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">Affiche tous les script contenant <code>ssh</code> dans leurs noms.</p>
+					<p class="text-dark text-start">Vous pouvez téléchargez d'avantages de scripts depuis le site officiel de nmap -> <a href="https://nmap.org/nsedoc/scripts/" target="_blank" style="color: aqua;">https://nmap.org/nsedoc/scripts/</a><br> <i>(présent dans les Liens à gauche dans le menu)</i>.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Utilisation du script <code>vulners.nse</code> à partir d'une adresse IP pour détecter les vulnérabilités par rapport aux événements connus :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/usr/share/nmap/scripts</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">nmap [eth0 inet IP] --script=vulners.nse -sV</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1"><code>-s</code> : pour trouver les services.</p>
+					<p class="text-dark text-start"><code>V</code> : pour afficher les services.</p>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Afficher les scripts nse concernant <code>mysql</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/usr/share/nmap/scripts</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ls -la | grep mysql</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Tester si le mot de passe de l'SGBD de la machine virtuelle <code>Metasploitable2-Linux</code> est vide :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/usr/share/nmap/scripts</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">nmap [eth0 inet IP] --script=mysql-empty-password.nse -sV</code></pre>
+						</div>
+					</div><br>
+					<div class="fs-3">
+						<div class="highlight">
+							<div class="text-start"><span class="text-gray-800">| mysql-empty-password:</span></div>
+							<div class="text-start"><span class="text-gray-800">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root account has empty password</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Connexion à <code>mysql</code> en renseignant le <code>hostname</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/usr/share/nmap/scripts</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">mysql -u root -p -h [eth0 inet IP]</code></pre>
+						</div>
+					</div>
+					<p class="text-dark text-start mt-1">Il va alors vous demander de saisir un mot de passe.</p>
+					<p class="text-dark text-start">Si vous faites <code>Entrer</code>, la console MySQL va alors s'afficher.</p>
+					<p class="text-dark text-start">Ce qui permet de montrer que la console MySQL de la machine virtuelle <code>Metasploitable2-Linux</code> ne possède pas de mot de passe.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-7">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Travail à faire
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">Rechercher et trouver des vulnérabilités en trouvant des exploits <i>(exemple : celui du mot de passe du SGBD fait précédemment)</i>.</p>
+					<p class="text-dark text-start">Présenter les exploits réussis dans un document PDF.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+nextButton(170, 8, "commandes.html", "Commandes");
+getFooter();
+</script>

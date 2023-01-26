@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script src="assets/js/helpers.js"></script>
+<script>let pathImg = "CREATION_DE_LA_MACHINE_VIRTUELLE_KALILINUX/";
+
+getHeader("Création de la machine virtuelle KaliLinux", "Retrouvez ci-dessous les étapes de la création de la machine virtuelle KaliLinux");
+
+getRow("mb-10", 2, 1, null, 'Cliquez sur <code><i class="bi bi-plus-circle me-1" style="font-size: 30px; color: #FFF;"></i> Create a New Virtual Machine</code>', null, null, pathImg+'1.png');
+getRow("mb-10", 3, 2, null, 'Sélectionnez <code>Custom (advanced)</code>', null, null, pathImg+'2.png');
+getRow("mb-10", 4, 3, null, 'Cliquez sur <code>Next &gt;</code>', null, null, pathImg+'3.png');
+getRow("mb-10", 5, 4, null, 'Sélectionnez l\'ISO de Kali', null, null, pathImg+'4.png');
+getRow("mb-10", 6, 5, null, 'Sélectionnez <code>Linux</code> et <code style="color: #FFF;">Debian 11.x 64-bit</code>', null, null, pathImg+'5.png');
+getRow("mb-10", 7, 6, null, '<code>Virtual machine name:</code> -> <code>KaliLinux</code>', null, null, pathImg+'6.png');
+getRow("mb-10", 8, 7, null, '<code>Number of processors:</code> -> 2 <br> <code style="color: #FFF;">Number of cores per processors:</code> -> 2', null, null, pathImg+'7.png');
+getRow("mb-10", 9, 8, null, 'Cliquez sur <code>Next &gt;</code>', null, null, pathImg+'8.png');
+getRow("mb-10", 10, 9, null, 'Sélectionnez <code>Use network address translation (NAT)</code>', null, null, pathImg+'9.png');
+getRow("mb-10", 11, 1, 0, 'Sélectionnez <code>LSI Logic (Recommended)</code>', null, null, pathImg+'10.png');
+getRow("mb-10", 12, 1, 1, 'Sélectionnez <code>SCSI (Recommended)</code>', null, null, pathImg+'11.png');
+getRow("mb-10", 13, 1, 2, 'Sélectionnez <code>Create a new virtual disk</code>', null, null, pathImg+'12.png');
+getRow("mb-10", 14, 1, 3, '<code>Maximum disk size (GB):</code>-><code>80.0</code>', null, null, pathImg+'13.png');
+getRow("mb-10", 15, 1, 4, 'Cliquez sur <code>Next &gt;</code>', null, null, pathImg+'14.png');
+getRow("mb-10", 16, 1, 5, 'Cliquez sur <code>Finish</code>', null, null, pathImg+'15.png');
+getRow("mb-10", 17, 1, 6, 'Cliquez sur <code>Edit virtual machine settings</code>', null, null, pathImg+'16.png');
+getRow("mb-10", 18, 1, 7, 'Cochez <code>Show all USB input devices</code>', null, null, pathImg+'17.png');
+getRow("mb-10", 19, 1, 8, 'Cochez <code>Report battery information to guest</code>', null, null, pathImg+'18.png');
+getRow("mb-10", 20, 1, 9, 'Sélectionnez <code>Always enabled</code>', null, null, pathImg+'19.png');
+getRow("mb-10", 21, 2, 0, 'Cochez <code>Synchronize guest time with host</code>', null, null, pathImg+'20.png');
+getRow("mb-10", 22, 2, 1, 'Cliquez sur <code>OK</code>', '<i>(En-bas à droite)</i>', null, pathImg+'21.png');
+
+nextButton(200, 8, "installation-de-kali.html", "Installation de Kali");
+
+getFooter();
+</script>

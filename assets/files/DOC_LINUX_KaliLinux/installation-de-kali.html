@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<script src="assets/js/helpers.js"></script>
+<script>let pathImg = "INSTALLATION_DE_KALI/";
+
+getHeader("Installation de Kali", "Retrouvez ci-dessous les étapes pour l'installation de Kali sur la machine virtuelle crée");
+
+getRow("mb-10", 2, 1, null, 'Cliquez sur <code><i class="fa-solid fa-play me-1" style="font-size: 30px; color: #008000;"></i> Power this virtual machine</code>', null, null, pathImg+'1.png');
+getRow("mb-10", 3, 2, null, 'Sélectionnez <code>Advanced install options</code>', null, null, pathImg+'2.png');
+getRow("mb-10", 4, 3, null, 'Sélectionnez <code>Graphical installer</code>', null, null, pathImg+'3.png');
+getRow("mb-10", 5, 4, null, 'Sélectionnez <code>Install</code>', null, null, pathImg+'4.png');
+getRow("mb-10", 6, 5, null, 'Sélectionnez <code>French - Français</code>', null, null, pathImg+'5.png');
+getRow("mb-10", 7, 6, null, 'Sélectionnez <code>France</code>', null, null, pathImg+'6.png');
+getRow("mb-10", 8, 7, null, 'Sélectionnez <code>Français</code>', null, null, pathImg+'7.png');
+getRow("mb-10", 9, 8, null, '<i>Nom de la machine</i> -> <code>kali</code>', null, null, pathImg+'8.png');
+getRow("mb-10", 10, 9, null, '<i>Nom complet du nouvel utilisateur</i> -> <code>votreprenom</code>', null, null, pathImg+'9.png');
+getRow("mb-10", 11, 1, 0, '<i>Identifiant pour le compte utilisateur</i> -> <code>votreprenom</code>', null, null, pathImg+'10.png');
+getRow("mb-10", 12, 1, 1, 'Définissez un mot de passe et confirmez ce dernier', null, null, pathImg+'11.png');
+getRow("mb-10", 13, 1, 2, 'Sélectionnez <code>Assisté - utiliser un disque entier</code>', null, null, pathImg+'12.png');
+getRow("mb-10", 14, 1, 3, 'Sélectionnez <code>SCSI3 (0,0,0) (sda) - 85,9 GB VMware, VMware Virtual 5</code>', null, null, pathImg+'13.png');
+getRow("mb-10", 15, 1, 4, 'Sélectionnez <code>Tout dans une seul partition</code>', null, null, pathImg+'14.png');
+getRow("mb-10", 16, 1, 5, 'Cliquez sur <code>Continuer</code>', null, null, pathImg+'15.png');
+getRow("mb-10", 17, 1, 6, '<i>Faut-il appliquer les changements sur les disques ?</i> -> <code>Oui</code>', null, null, pathImg+'16.png');
+info("mb-10", "alert-success", 18, "Le téléchargement devrait débuté...");
+getRow("mb-10", 19, 1, 7, '<i>Faut-il utiliser un miroir sur le réseau ?</i> -> <code>Non</code>', null, null, pathImg+'17.png');
+getRow("mb-10", 20, 1, 8, '<i>Installer le programme de démarrage GRUB <br> sur le disque principal ?</i> -> <code>Oui</code>', null, null, pathImg+'18.png');
+getRow("mb-10", 21, 1, 9, 'Sélectionnez <code>/dev/sda</code>', null, null, pathImg+'19.png');
+getRow("mb-10", 22, 2, 0, 'Cliquez sur <code>Continuer</code>', null, null, pathImg+'20.png');
+getRow("mb-10", 23, 2, 1, 'Identifiez-vous', null, null, pathImg+'21.png');
+getRow("mb-10", 22, null, null, 'Bienvenue sur l\'interface principal de Kali !', null, null, pathImg+'22.png');
+getRow("mb-10", 23, 2, 3, 'Ouvrez le terminal', null, null, pathImg+'23.png');
+
+nextButton(100, 8, "tp-villain.html", "TP Villain");
+
+getFooter();
+</script>

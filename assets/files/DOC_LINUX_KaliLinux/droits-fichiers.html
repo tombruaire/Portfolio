@@ -1,0 +1,395 @@
+<meta charset="utf-8">
+<script src="assets/js/helpers.js"></script>
+<script>
+getHeader("Droits fichiers", "Retrouvez ci-dessous les commandes d'attribution de droits des fichiers sous de Kali Linux");
+
+command(2, "Création d'un fichier", "admin", "touch nom_fichier.txt");
+command(3, "Voir les droits de ce fichier", "admin", "ls -la nom_fichier.txt");
+
+comment("", "alert-secondary", 4, '<p class="text-start"><u>Premier bloc</u> -> <i>Type de fichier</i></p> <p class="text-start">1 caractère parmis :</p> <p class="text-start"><code>-</code><i>(Fichier)</i></p> <p class="text-start"><code>d</code><i>(Dossier)</i></p> <p class="text-start"><code>l</code><i>(Lien)</i></p>');
+comment("", "alert-secondary", 5, '<p class="text-start"><u>Deuxième bloc</u> -> <i>Droits attribués au propriétaire du fichier</i></p> <p class="text-start">3 caractères parmis :</p> <p class="text-start"><code>r</code><i>(Lecture)</i></p> <p class="text-start"><code>w</code><i>(Écriture)</i></p> <p class="text-start"><code>x</code><i>(Exécutable)</i></p> <p class="text-start"><code>-</code><i>(Droit non accordé)</i></p> <p><i><code>r</code>toujours en première position</i></p>');
+comment("", "alert-secondary", 6, '<p class="text-start"><u>Troisième bloc</u> -> <i>Droits attribués au groupe propriétaire du fichier</i></p> <p class="text-start">3 caractères parmis :</p> <p class="text-start mb-0"><code>r</code><code>w</code><code>x</code><code>-</code></p> <p><i><code>r</code>toujours en première position</i></p>');
+comment("mb-10", "alert-secondary", 7, '<p class="text-start"><u>Quatrième bloc</u> -> <i>Droits attribués aux <u>autres</u> propriétaire du fichier</i></p> <p class="text-start">3 caractères parmis :</p> <p class="text-start mb-0"><code>r</code><code>w</code><code>x</code><code>-</code></p> <p><i><code>r</code>toujours en première position</i></p>');
+
+</script>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-8">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Attribution de(s) droit(s)
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<div class="row d-flex justify-content-center">
+						<div class="alert alert-info text-start" style="color: #FFF;">
+							<div class="row d-flex justify-content-center">
+								<div class="col-auto">
+									<div class="alert alert-warning">
+										<h3 class="text-center mb-0">Syntaxe</h3>
+									</div>
+								</div>
+							</div>
+							<p><code class="bg-warning fw-bold fs-3" style="color: #000;">chmod [N1][N2][N3] nom_fichier.txt</code></p>
+							<p><code class="bg-warning fw-bold" style="color: #000;">[N1]</code>-> Droits attribués au propriétaire du fichier</p>
+							<p><code class="bg-warning fw-bold" style="color: #000;">[N2]</code>-> Droits attribués au groupe propriétaire du fichier</p>
+							<p><code class="bg-warning fw-bold" style="color: #000;">[N3]</code>-> Droits attribués aux autres propriétaires du fichier</p>
+							<div class="py-5">
+								<div class="row d-flex justify-content-center">
+									<div class="col-5">
+										<div class="table-resonsive">
+											<table class="table text-dark">
+												<thead class="bg-secondary" style="border: 2px solid #FFF;">
+													<tr>
+														<th scope="col" class="text-center">Droit</th>
+														<th scope="col" class="text-center">Value</th>
+														<th scope="col" class="text-center">Octale</th>
+													</tr>
+												</thead>
+												<tbody class="bg-light-primary" style="border: 2px solid #FFF;">
+													<tr>
+														<td class="text-center"><code class="bg-info">r</code></td>
+														<td>Lecture</td>
+														<td class="text-center"><code class="bg-warning fw-bold" style="color: #000;">4</code></td>
+													</tr>
+													<tr>
+														<td class="text-center"><code class="bg-info">w</code></td>
+														<td>Écriture</td>
+														<td class="text-center"><code class="bg-warning fw-bold" style="color: #000;">2</code></td>
+													</tr>
+													<tr>
+														<td class="text-center"><code class="bg-info">x</code></td>
+														<td>Exécutable</td>
+														<td class="text-center"><code class="bg-warning fw-bold" style="color: #000;">1</code></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="py-5">
+								<div class="row d-flex justify-content-center">
+									<div class="table-resonsive">
+										<table class="table text-center" style="color: #FFF;">
+											<thead style="border: 2px solid #FFF;">
+												<tr>
+													<th class="bg-secondary" style="width: 161px;">Attribution</th>
+													<th class="bg-secondary" style="width: 162px;">Lecture</th>
+													<th class="bg-secondary" style="width: 162px;">Écriture</th>
+													<th class="bg-secondary" style="width: 162px;">Exécutable</th>
+													<th class="bg-secondary" style="width: 80px;">S</th>
+												</tr>
+											</thead>
+											<tbody class="bg-light-primary" style="border: 2px solid #FFF;">
+												<tr>
+													<td style="height: auto; line-height: 3em; text-align: center;">Propriétaire</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-auto">
+																<select class="form-select" style="color: #FFF;">
+																	<option value="4">4 - Droit accordé</option>
+																	<option value="0">0 - Droit non accordé</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-auto">
+																<select class="form-select" style="color: #FFF;">
+																	<option value="2">2 - Droit accordé</option>
+																	<option value="0">0 - Droit non accordé</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-auto">
+																<select class="form-select" style="color: #FFF;">
+																	<option value="1">1 - Droit accordé</option>
+																	<option value="0">0 - Droit non accordé</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-9">
+																<input type="text" id="n1" placeholder="[N1]" maxlength="1" class="form-control text-center" style="color: #FFF;" onkeypress="return formatNb(event);">
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td style="height: auto; line-height: 3em; text-align: center;">Groupe propriétaire</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-auto">
+																<select class="form-select" style="color: #FFF;">
+																	<option value="4">4 - Droit accordé</option>
+																	<option value="0">0 - Droit non accordé</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-auto">
+																<select class="form-select" style="color: #FFF;">
+																	<option value="2">2 - Droit accordé</option>
+																	<option value="0">0 - Droit non accordé</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-auto">
+																<select class="form-select" style="color: #FFF;">
+																	<option value="1">1 - Droit accordé</option>
+																	<option value="0">0 - Droit non accordé</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-9">
+																<input type="text" id="n2" placeholder="[N2]" maxlength="1" class="form-control text-center" style="color: #FFF;" onkeypress="return formatNb(event);">
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td style="height: auto; line-height: 3em; text-align: center;">Autres propriétaires</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-auto">
+																<select class="form-select" style="color: #FFF;">
+																	<option value="4">4 - Droit accordé</option>
+																	<option value="0">0 - Droit non accordé</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-auto">
+																<select class="form-select" style="color: #FFF;">
+																	<option value="2">2 - Droit accordé</option>
+																	<option value="0">0 - Droit non accordé</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-auto">
+																<select class="form-select" style="color: #FFF;">
+																	<option value="1">1 - Droit accordé</option>
+																	<option value="0">0 - Droit non accordé</option>
+																</select>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="row d-flex justify-content-center">
+															<div class="col-9">
+																<input type="text" id="n3" placeholder="[N3]" maxlength="1" class="form-control text-center" style="color: #FFF;" onkeypress="return formatNb(event);">
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<!--
+							<div class="mb-10">
+								<div class="row d-flex justify-content-center">
+									<div class="col-auto">
+										<input type="text" name="fichier" id="fichier" placeholder="Nom du fichier" class="form-control" style="color: #FFF;">
+									</div>
+								</div>
+							</div>
+							<div class="mb-5">
+								<div class="row d-flex justify-content-center">
+									<div class="col-auto">
+										<button type="submit" name="Generer" id="Generer" class="btn btn-primary">Générer</button>
+									</div>
+								</div>
+							</div>
+							-->
+							<div class="highlight">
+								<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+								<div class="highlight-code">
+									<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod [N1][N2][N3] nom_fichier.txt</code></pre>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mb-20">
+					<p class="text-dark text-start">Attribuer tous les droits<code class="bg-info">rwx</code>à un fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod 777 nom_fichier.txt</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-20">
+					<p class="text-dark text-start">Attribuer seulement le droit de lecture<code class="bg-info">r</code>d'un fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod 444 nom_fichier.txt</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-20">
+					<p class="text-dark text-start">Attribuer seulement le droit d'écriture<code class="bg-info">w</code>d'un fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod 222 nom_fichier.txt</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-20">
+					<p class="text-dark text-start">Attribuer seulement le droit d'exécution<code class="bg-info">x</code>d'un fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod 111 nom_fichier.txt</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-20">
+					<p class="text-dark text-start">Attribuer le droit de lecture en plus<code class="bg-info">r</code>à un fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod +r nom_fichier.txt</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-20">
+					<p class="text-dark text-start">Attribuer le droit d'écriture en plus<code class="bg-info">w</code>à un fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod +w nom_fichier.txt</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-20">
+					<p class="text-dark text-start">Attribuer le droit d'exécution en plus<code class="bg-info">w</code>à un fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod +x nom_fichier.txt</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-20">
+					<p class="text-dark text-start">Enlever tous les droits d'un fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod 000 nom_fichier.txt</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- SAVE
+<div class="row d-flex justify-content-center mb-10 reveal">
+	<div class="col-md-auto">
+		<div class="alert alert-primary reveal-1 border-light">
+			<div class="fw-semibold fs-2 text-gray-500">
+				<span class="fw-bold text-gray-900">
+					aaa
+				</span>
+			</div>
+		</div>
+	</div>
+</div> 
+-->
+
+<script>getFooter();</script>
+<script type="text/javascript">
+// Suppression des espaces pour le nombre
+$("input#n").on({
+	keydown: function(e) {
+		if (e.which === 32)
+			return false
+	},
+	change: function() {
+		this.value = this.value.replace(/\s/g, "");
+	}
+});
+
+// Suppression des espaces pour le 1er chiffre
+$("input#n1").on({
+	keydown: function(e) {
+		if (e.which === 32)
+			return false
+	},
+	change: function() {
+		this.value = this.value.replace(/\s/g, "");
+	}
+});
+
+// Suppression des espaces pour le 2nd chiffre
+$("input#n2").on({
+	keydown: function(e) {
+		if (e.which === 32)
+			return false
+	},
+	change: function() {
+		this.value = this.value.replace(/\s/g, "");
+	}
+});
+
+// Suppression des espaces pour le 3e chiffre
+$("input#n3").on({
+	keydown: function(e) {
+		if (e.which === 32)
+			return false
+	},
+	change: function() {
+		this.value = this.value.replace(/\s/g, "");
+	}
+});
+
+// Autorisation des chiffres seulement
+function formatNb(event) {
+    var regex = new RegExp("^[0-9]");
+    var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+}
+</script>

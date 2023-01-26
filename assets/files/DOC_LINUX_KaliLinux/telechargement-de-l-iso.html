@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<script src="assets/js/helpers.js"></script>
+<script>let pathImg = "TELECHARGEMENT_DE_L_ISO_KALILINUX/";
+
+getHeader("Téléchargement de l'ISO de Kali", "Retrouvez ci-dessous les étapes pour télécharger l'ISO de Kali");
+
+getRow("mb-10", 2, 1, null, 'Rendez-vous sur le site officiel de Kali</span> <i class="fa-regular fa-globe ms-2" style="font-size: 30px; color: #FFF;"></i>', '<i>(Cliquez sur l\'image ci-dessous pour accéder au site)</i>', "https://www.kali.org", pathImg+'1.png');
+
+getRow("mb-10", 3, 2, null, 'Cliquez sur<code class="text-warning">DOWNLOAD <i class="fa-regular fa-arrow-down-to-line text-warning ms-1" style="font-size: 30px;"></i></code>', null, null, pathImg+'2.png');
+
+getRow("mb-10", 4, 3, null, 'Cliquez sur<code>Live Boot <i class="fa-brands fa-usb text-warning ms-1" style="font-size: 30px;"></i></code>', '<i>(Encadré en noir sur l\'image ci-dessous)</i>', null, pathImg+'3.png');
+getRow("mb-10", 5, 4, null, 'Cliquez sur<code><i class="fa-regular fa-arrow-down-to-line text-primary ms-1" style="font-size: 30px;"></i></code>pour télécharger l\'ISO de<code style="color: #FFF;">Kali 2022.4</code>', null, null, pathImg+'4.png');
+
+info("mb-10", "alert-warning", 6, "Nom de l'ISO : <i>kali-linux-2022.4-live-adm64.iso</i>");
+info("", "alert-warning", 7, "Taille de l'ISO : <i><b>3.8</b> Go</i>");
+
+nextButton(300, 8, "creation-de-la-machine-virtuelle.html", "Création de la machine virtuelle");
+
+getFooter();
+</script>

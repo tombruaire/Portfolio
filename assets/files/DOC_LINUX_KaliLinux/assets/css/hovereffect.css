@@ -1,0 +1,43 @@
+/* hover zoom + */
+.hoverzoom .alert {
+	transition: 1s ease;
+}
+.hoverzoom .alert:hover {
+	-webkit-transform: scale(1.1); 
+	-ms-transform: scale(1.1); 
+	transform: scale(1.1); 
+	transition: 1s ease;
+}
+
+/* hover zoom - */
+.hoverdezoom .alert {
+	transition: 1s ease;
+}
+.hoverdezoom .alert:hover {
+	-webkit-transform: scale(0.8); 
+	-ms-transform: scale(0.8); 
+	transform: scale(0.8); 
+	transition: 1s ease;
+}
+
+/* border hover */
+.select .alert {
+	transition: .5s ease;
+}
+.select .alert:hover {
+	box-shadow: 0 0 0 5px #FFFFFF; 
+	transition: .5s ease;
+}
+
+/* Image grisé. Apparaît en couleur quand on passe la souris dessus */
+.color img {
+	filter: grayscale(100%); 
+	-webkit-filter: grayscale(100%); 
+	-webkit-transition: all 1s ease;
+}
+.color img:hover {
+	filter: grayscale(0%); 
+	filter: gray; 
+	-webkit-filter: grayscale(0%); 
+	filter: none; transition: 1s ease;
+}
